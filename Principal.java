@@ -1,4 +1,6 @@
 package trabalho01;
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.ArrayList;
 
 //classe do tipo Generics
@@ -130,6 +132,8 @@ public class Principal {
         filaDeAlunos.enfileirar(aluno3.getNome());
 
         System.out.println("Fila de alunos: " + filaDeAlunos);
+
+        System.out.println("");
         }
 
 
