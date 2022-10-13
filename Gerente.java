@@ -6,6 +6,7 @@ public class Gerente extends Funcionario implements PessoaFisica {
 
     // Construtor //
 
+
     public Gerente(String cpf, String nome, int conta) {
         super(cpf, nome, conta);
         this.setFuncao("Gerente");

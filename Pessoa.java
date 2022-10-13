@@ -11,8 +11,8 @@ public abstract class Pessoa {
         this.nome = nome;
         this.conta = conta;
     }
-    // Getter and Setter //
 
+    // Getter and Setter //
     public String getNome() {
         return nome;
     }
