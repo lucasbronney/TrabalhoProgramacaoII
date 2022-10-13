@@ -93,7 +93,7 @@ import java.util.ArrayList;
         String Ans = "";
 
         for (int i = ultimoDaFila; i < primeiroDaFila; i++) {
-            Ans += String.valueOf(objeto.get(i)) + "\n";
+            Ans += String.valueOf(objeto.get(i)) + ", ";
         }
 
         Ans += String.valueOf(objeto.get(primeiroDaFila));
@@ -128,6 +128,8 @@ public class Principal {
         filaDeAlunos.enfileirar(aluno1.getNome());
         filaDeAlunos.enfileirar(aluno2.getNome());
         filaDeAlunos.enfileirar(aluno3.getNome());
+
+        System.out.println("Fila de alunos: " + filaDeAlunos);
         }
 
 
