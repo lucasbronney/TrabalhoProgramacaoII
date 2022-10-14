@@ -5,6 +5,23 @@ public class Banco implements PessoaJuridica {
 
     String nome, nomefantasia, cnpj;
 
+    // Construtor //
+    public Banco(String nome, String nomefantasia, String cnpj) {
+        if (nome.equals("")) {
+            try {
+                throw new ExceptNome();
+            } catch (ExceptNome n) {
+                System.out.println("Erro encontrado.");
+                n.printStackTrace();
+                System.exit(0);
+            }
+            
+        }
+        this.nome = nome;
+        this.nomefantasia = nomefantasia;
+        this.cnpj = cnpj;
+    }
+
     // Getters and Setters //
     public String getNome() {
         return nome;
@@ -40,6 +57,10 @@ public class Banco implements PessoaJuridica {
     public void setCNPJ(String cnpj) {
         this.cnpj = cnpj;
     }
-    
- 
+
+    public void infoBanco() {
+        System.out.println("Nome: " + this.getNome());
+        System.out.println("Nome Fantasia: " + this.getNomefantasia());
+        System.out.println("CNPJ: " + this.getCNPJ());
+    }
 }
