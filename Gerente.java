@@ -5,13 +5,10 @@ public class Gerente extends Funcionario implements PessoaFisica {
     boolean ativo;
 
     // Construtor //
-
-
     public Gerente(String cpf, String nome, int conta) {
         super(cpf, nome, conta);
         this.setFuncao("Gerente");
     }
-
 
     // Getters and Setters //
     public boolean isAtivo() {
@@ -36,7 +33,7 @@ public class Gerente extends Funcionario implements PessoaFisica {
     public void fecharConta() {
         if (this.isAtivo()) {
             this.setAtivo(false);
-            this.setConta(conta -1);
+            this.setConta(conta - 1);
             System.out.println("Conta fechada com sucesso.");
         } else {
             System.out.println("Conta inexistente. ");
@@ -45,8 +42,14 @@ public class Gerente extends Funcionario implements PessoaFisica {
 
     public void abrir() {
         this.setAtivo(true);
-        this.setConta(conta +1);
+        this.setConta(conta + 1);
         System.out.println("Conta aberta com sucesso.");
 
+    }
+    
+    public void infoContas(){
+        System.out.println("Nome " + this.getNome());
+        System.out.println("CPF: " + this.getCpf());
+        System.out.println("Contas " + this.getConta());
     }
 }
