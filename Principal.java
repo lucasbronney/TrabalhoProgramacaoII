@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 //classe do tipo Generics
- class FilaDeAtendimento<Generics>{
+class FilaDeAtendimento<Generics>{
     ArrayList <Generics> objeto = new ArrayList<>();
     //-1 aponta para nenhum elemento da Fila
     int primeiroDaFila = -1, ultimoDaFila = -1;
@@ -274,17 +274,17 @@ class Menu{
                     break;
 
                 case 6:
-                        Scanner lerDados1 = new Scanner(System.in);
-                        System.out.print ("Nome do Diretor: ");
-                        String nomeDiretor = lerDados1.nextLine();
+                    Scanner lerDados1 = new Scanner(System.in);
+                    System.out.print ("Nome do Diretor: ");
+                    String nomeDiretor = lerDados1.nextLine();
 
-                        System.out.print ("CPF: ");
-                        String cpfDiretor = lerDados1.nextLine();
+                    System.out.print ("CPF: ");
+                    String cpfDiretor = lerDados1.nextLine();
 
-                        System.out.print ("Conta: ");
-                        Integer contaDiretor = lerDados1.nextInt();
+                    System.out.print ("Conta: ");
+                    Integer contaDiretor = lerDados1.nextInt();
 
-                        diretores.add(new Diretor(nomeDiretor, cpfDiretor, contaDiretor));
+                    diretores.add(new Diretor(nomeDiretor, cpfDiretor, contaDiretor));
 //                        lerDados1.close();
                     break;
 
@@ -365,17 +365,17 @@ class Menu{
 
                 case 10:
 
-                        Scanner lerDados10 = new Scanner(System.in);
-                        System.out.print ("Nome do Presidente: ");
-                        String nomePresidente = lerDados10.nextLine();
+                    Scanner lerDados10 = new Scanner(System.in);
+                    System.out.print ("Nome do Presidente: ");
+                    String nomePresidente = lerDados10.nextLine();
 
-                        System.out.print ("CPF: ");
-                        String cpfPresidente = lerDados10.nextLine();
+                    System.out.print ("CPF: ");
+                    String cpfPresidente = lerDados10.nextLine();
 
-                        System.out.print ("Conta: ");
-                        Integer contaGerente = lerDados10.nextInt();
+                    System.out.print ("Conta: ");
+                    Integer contaGerente = lerDados10.nextInt();
 
-                        presidente.add(new Presidente(nomePresidente, cpfPresidente, contaGerente));
+                    presidente.add(new Presidente(nomePresidente, cpfPresidente, contaGerente));
 //                        lerDados10.close();
                     break;
 
@@ -418,11 +418,12 @@ public class Principal {
             }
         } while(opcao != 0);
 
-
-        }
-
-
+        System.out.println("");
 
     }
+
+
+
+}
 
 

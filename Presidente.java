@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class Presidente extends Funcionario implements PessoaFisica, Diretoria {
 
-    public static ArrayList<Curso> cursos = new ArrayList<>();
     // Construtor //
 
     public Presidente(String cpf, String nome, int conta) {
@@ -13,24 +12,6 @@ public class Presidente extends Funcionario implements PessoaFisica, Diretoria {
     }
 
     // Getters and Setters //
-    public static ArrayList<Curso> getCursos() {
-        return cursos;
-    }
-
-    public static void addCursos(Curso c) {
-        cursos.add(c);
-        System.out.println("Curso adicionado. ");
-    }
-
-    // Métodos //
-    public static void listarCursos() {
-        System.out.println("Cursos disponiveis " + cursos);
-    }
-
-    public static void rmvCursos(Curso c) {
-        cursos.remove(c);
-        System.out.println("Curso removido ");
-    }
 
     @Override
     public String getCPF() {

@@ -1,26 +1,26 @@
 package trabalho01;
 
 public class ContaCorrente implements Conta {
-
     // Atributos //
     private String titular;
-    private float saldo;
+    private double saldo = 0;
     private boolean status;
-    private String gerente;
 
     // Construtor //
-    public ContaCorrente(String titular, String gerente) {
+    public ContaCorrente(){
+
+    }
+    public ContaCorrente(String titular) {
         this.titular = titular;
-        this.gerente = gerente;
-        this.saldo = 100;
+
     }
 
     // Getters and Setters //
-    public float getSaldo() {
+    public double getSaldo() {
         return saldo;
     }
 
-    public void setSaldo(float saldo) {
+    public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
 
@@ -30,14 +30,6 @@ public class ContaCorrente implements Conta {
 
     public void setStatus(boolean status) {
         this.status = status;
-    }
-
-    public String getGerente() {
-        return gerente;
-    }
-
-    public void setGerente(String gerente) {
-        this.gerente = gerente;
     }
 
     // Métodos //

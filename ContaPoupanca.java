@@ -6,13 +6,11 @@ public class ContaPoupanca implements Conta {
     private String titular;
     private float saldo;
     private boolean status;
-    private String gerente;
 
     // Construtor //
-    public ContaPoupanca(String titular, String gerente) {
+    public ContaPoupanca(String titular) {
         this.titular = titular;
-        this.gerente = gerente;
-        this.saldo = 100;
+
     }
 
     // Getters and Setters //
@@ -30,14 +28,6 @@ public class ContaPoupanca implements Conta {
 
     public void setStatus(boolean status) {
         this.status = status;
-    }
-
-    public String getGerente() {
-        return gerente;
-    }
-
-    public void setGerente(String gerente) {
-        this.gerente = gerente;
     }
 
     // Métodos //
