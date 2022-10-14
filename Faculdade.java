@@ -2,13 +2,15 @@ package trabalho01;
 
 public class Faculdade implements PessoaJuridica {
 
-    String nomefantasia, cnpj;
+    String nome, nomefantasia, cnpj;
     // Construtor //
 
-    public Faculdade(String nomefantasia, String cnpj) {
+    public Faculdade(String nome, String nomefantasia, String cnpj) {
+        this.nome = nome;
         this.nomefantasia = nomefantasia;
         this.cnpj = cnpj;
     }
+
 
     // Getters and Setter //
     public String getNomefantasia() {
@@ -25,6 +27,14 @@ public class Faculdade implements PessoaJuridica {
 
     public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     // Métodos //
