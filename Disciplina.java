@@ -3,65 +3,64 @@ package trabalho01;
 public class Disciplina {
 
     // Atributos // 
-    private String nomeDisciplina, idDisciplina,sala;
+    private String nome,id,sala;
     private double horaInicio, horaFim;
-
     // Construtor //
 
-    public Disciplina( String nomeDisciplina, String idDisciplina, String sala, double horaInicio, double horaFim) {
-        this.nomeDisciplina = nomeDisciplina;
-        this.idDisciplina = idDisciplina;
+    public Disciplina(String nome, String id, String sala, double horaInicio, double horaFim) {
+        this.nome = nome;
+        this.id = id;
         this.sala = sala;
         this.horaInicio = horaInicio;
         this.horaFim = horaFim;
     }
     
     // Getters and Setters //
-    private String getNomeDisciplina() {
-        return nomeDisciplina;
+    public String getNome() {
+        return nome;
     }
 
-    private void setNomeDisciplina(String nomeDisciplina) {
-        this.nomeDisciplina = nomeDisciplina;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    private String getIdDisciplina() {
-        return idDisciplina;
+    public String getId() {
+        return id;
     }
 
-    private void setIdDisciplina(String idDisciplina) {
-        this.idDisciplina = idDisciplina;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    private String getSala() {
+    public String getSala() {
         return sala;
     }
 
-    private void setSala(String sala) {
+    public void setSala(String sala) {
         this.sala = sala;
     }
 
-    private double getHoraInicio() {
+    public double getHoraInicio() {
         return horaInicio;
     }
 
-    private void setHoraInicio(double horaInicio) {
+    public void setHoraInicio(double horaInicio) {
         this.horaInicio = horaInicio;
     }
 
-    private double getHoraFim() {
+    public double getHoraFim() {
         return horaFim;
     }
 
-    private void setHoraFim(double horaFim) {
+    public void setHoraFim(double horaFim) {
         this.horaFim = horaFim;
     }
 
     // toString //
 
-   @Override
+    @Override
     public String toString() {
-        return "Disciplina{" + "nome=" + nomeDisciplina + ", id=" + idDisciplina + ", sala=" + sala + ", horaInicio=" + horaInicio + ", horaFim=" + horaFim + '}';
+        return "Disciplina{" + "nome=" + nome + ", id=" + id + ", sala=" + sala + ", horaInicio=" + horaInicio + ", horaFim=" + horaFim + '}';
     }
     
 }
