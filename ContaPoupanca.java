@@ -6,12 +6,15 @@ public class ContaPoupanca implements Conta {
     private String titular;
     private float saldo;
     private boolean status;
+    private String gerente;
 
     // Construtor //
-    public ContaPoupanca(String titular) {
-        this.titular = titular;
 
+    public ContaPoupanca(String titular, String gerente) {
+        this.titular = titular;
+        this.gerente = gerente;
     }
+    
 
     // Getters and Setters //
     public float getSaldo() {
@@ -30,32 +33,45 @@ public class ContaPoupanca implements Conta {
         this.status = status;
     }
 
+    public String getGerente() {
+        return gerente;
+    }
+
+    public void setGerente(String gerente) {
+        this.gerente = gerente;
+    }
+    
+
     // Métodos //
     public void depositar(float v) {
-        if (this.getStatus()) {
+        if (this.getStatus() == false) {
+            try {
+                throw new ExceptConta();
+            } catch (ExceptConta e) {
+                System.out.println("Um erro foi encontrado");
+                e.printStackTrace();
+            }
+        } else {
             this.setSaldo(this.getSaldo() + v);
             System.out.println("Depósito realizado");
-        } else {
-            System.out.println("Não foi possível realizar o deposito");
         }
-
     }
 
-    public void sacar(float v) {
-        if (this.getStatus()) {
-            if (this.getSaldo() >= v) {
-                this.setSaldo(this.getSaldo() - v);
-                System.out.println("Saque realizado");
-            } else {
-                System.out.println("Saldo Insuficiente");
+    public void sacar (float v) {
+        if (this.getStatus() == false) {
+            try {
+                throw new ExceptConta();
+            } catch (ExceptConta e) {
+                System.out.println("Um erro foi encontrado");
+                e.printStackTrace();
             }
-
+        } else {
+            this.setSaldo(this.getSaldo() - v);
+            System.out.println("Saque realizado");
         }
     }
-
     public void mostrarInfo() {
         System.out.println("Titular: " + this.getTitular());
-        System.out.println("Status: " + this.getStatus());
         System.out.println("Saldo: " + this.getSaldo());
     }
 
