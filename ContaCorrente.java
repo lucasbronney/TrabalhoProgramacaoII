@@ -12,6 +12,7 @@ public class ContaCorrente implements Conta {
     public ContaCorrente(String titular, String gerente) {
         this.titular = titular;
         this.gerente = gerente;
+        this.saldo = 100;
     }
 
     // Getters and Setters //
@@ -54,19 +55,24 @@ public class ContaCorrente implements Conta {
         }
     }
 
-    public void sacar (float v) {
+    public void sacar(float v) {
         if (this.getStatus() == false) {
             try {
                 throw new ExceptConta();
             } catch (ExceptConta e) {
                 System.out.println("Um erro foi encontrado");
                 e.printStackTrace();
+                System.exit(0);
             }
+        }
+        if (this.getSaldo() < v) {
+            System.out.println("Saldo insuficiente");
         } else {
             this.setSaldo(this.getSaldo() - v);
             System.out.println("Saque realizado");
         }
     }
+
     public void mostrarInfo() {
         System.out.println("Titular: " + this.getTitular());
         System.out.println("Saldo: " + this.getSaldo());
