@@ -14,11 +14,11 @@ public class Curso {
     }
     // Getters and Setters //
 
-    private String getNome() {
+    public String getNome() {
         return nome;
     }
 
-    private void setNome(String nome) {
+    public void setNome(String nome) {
         this.nome = nome;
     }
 
@@ -26,15 +26,15 @@ public class Curso {
         return id;
     }
 
-    private void setId(String id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    private int getQtdPeriodo() {
+    public int getQtdPeriodo() {
         return qtdPeriodo;
     }
 
-    private void setQtdPeriodo(int qtdPeriodo) {
+    public void setQtdPeriodo(int qtdPeriodo) {
         this.qtdPeriodo = qtdPeriodo;
     }
     // Métodos //
@@ -49,5 +49,5 @@ public class Curso {
     public String toString() {
         return "Curso{" + "nome=" + nome + ", id=" + id + ", qtdPeriodo=" + qtdPeriodo + '}';
     }
-
-   }
+    
+}
