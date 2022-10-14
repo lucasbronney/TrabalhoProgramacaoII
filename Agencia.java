@@ -13,5 +13,4 @@ public class Agencia {
     public void setCodgencia(String codgencia) {
         this.codgencia = codgencia;
     }
-
 }
