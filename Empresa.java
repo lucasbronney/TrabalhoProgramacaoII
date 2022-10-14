@@ -4,7 +4,6 @@ public abstract class Empresa {
 
     String nome;
     String cnpj;
-    // Construtor // 
 
     public Empresa(String nome, String cnpj) {
         this.nome = nome;
