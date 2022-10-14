@@ -35,7 +35,7 @@ public class Aluno extends Pessoa implements PessoaFisica {
 
     @Override
     public String toString() {
-        return "Aluno{" + "Nome: " + nome + ", CPF: " + cpf + ", Matricula: " + matricula + ", Contas: " + conta + '}';
+        return "Aluno" + "Nome: " + nome + ", CPF: " + cpf + ", Matricula: " + matricula + ", Contas: " + conta + '}';
     }
     
 }
