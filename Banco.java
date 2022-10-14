@@ -5,6 +5,12 @@ public class Banco implements PessoaJuridica {
 
     String nome, nomefantasia, cnpj;
 
+    public Banco(String nome, String nomefantasia, String cnpj){
+        this.nome = nome;
+        this.nomefantasia = nomefantasia;
+        this.cnpj = cnpj;
+    }
+
     // Getters and Setters //
     public String getNome() {
         return nome;

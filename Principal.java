@@ -1,16 +1,17 @@
 package trabalho01;
-import org.w3c.dom.ls.LSOutput;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 //classe do tipo Generics
- class FilaDeAtendimento<T>{
-    ArrayList <T> objeto = new ArrayList<>();
+ class FilaDeAtendimento<Generics>{
+    ArrayList <Generics> objeto = new ArrayList<>();
     //-1 aponta para nenhum elemento da Fila
     int primeiroDaFila = -1, ultimoDaFila = -1;
 
     // retorna o primeiro elemento da fila
-    T primeiroDaFila()
+    Generics primeiroDaFila()
     {
         if (primeiroDaFila == -1)
 
@@ -20,7 +21,7 @@ import java.util.ArrayList;
     }
 
     // retorna o ultimo elemento da fila
-    T ultimoDaFila()
+    Generics ultimoDaFila()
     {
 
         if (ultimoDaFila == -1)
@@ -29,7 +30,7 @@ import java.util.ArrayList;
     }
 
     // Adiciona elementos na fila
-    void enfileirar(T X)
+    void enfileirar(Generics X)
     {
         // se a fila estiver vazia
         if (this.filaVazia()) {
@@ -95,7 +96,8 @@ import java.util.ArrayList;
         String Ans = "";
 
         for (int i = ultimoDaFila; i < primeiroDaFila; i++) {
-            Ans += String.valueOf(objeto.get(i)) + ", ";
+            System.out.print(i + " - ");
+            Ans += String.valueOf(objeto.get(i)) + "\n";
         }
 
         Ans += String.valueOf(objeto.get(primeiroDaFila));
@@ -103,37 +105,349 @@ import java.util.ArrayList;
         return Ans;
     }
 }
+class Menu{
+    public static ArrayList <Aluno> alunos = new ArrayList<Aluno>();
+    public static ArrayList <Banco> banco = new ArrayList<Banco>();
+    public static ArrayList <ContaCorrente> contaCorrentes = new ArrayList<ContaCorrente>();
+    public static ArrayList <ContaPoupanca> contaPoupancas = new ArrayList<ContaPoupanca>();
+    public static ArrayList <Coordenador> coordenadores = new ArrayList<Coordenador>();
+    public static ArrayList <Curso> cursos = new ArrayList<Curso>();
+    public static ArrayList <Disciplina> disciplinas = new ArrayList<Disciplina>();
+    public static ArrayList <Diretor> diretores = new ArrayList<Diretor>();
+    public static ArrayList <Faculdade> faculdades = new ArrayList<Faculdade>();
+    public static ArrayList <Gerente> gerentes = new ArrayList<Gerente>();
+    public static ArrayList <Presidente> presidente = new ArrayList<Presidente>();
 
+    public static FilaDeAtendimento <Aluno> filaDeAlunos = new FilaDeAtendimento<>();
+    public static FilaDeAtendimento <Aluno> filaDeProfessores = new FilaDeAtendimento<>();
+    public static FilaDeAtendimento <Coordenador> filaDeCoordenadores = new FilaDeAtendimento<>();
+    public static FilaDeAtendimento <PessoaFisica> filaDePessoasFisicas = new FilaDeAtendimento<>();
+
+
+
+    public static void menu (){
+        System.out.println("\nMenu");
+        System.out.println("0. Sair");
+        System.out.println("1. Cadastrar");
+        System.out.println("2. Consulta Fila de Atendimento");
+        System.out.print ("Opcao: " );
+    }
+
+    public static void cadastrarContas (){
+
+        int opcao;
+        Scanner entrada = new Scanner(System.in);
+
+        do{
+
+            System.out.println("------------------------------");
+            System.out.println("0. Sair");
+            System.out.println("1. Cadastrar Alunos");
+            System.out.println("2. Cadastrar Banco");
+            System.out.println("3. Cadastrar Conta Corrente");
+            System.out.println("4. Cadastrar Conta Poupanca");
+            System.out.println("5. Cadastrar Coordenador");
+            System.out.println("6. Cadastrar Diretor");
+            System.out.println("7. Cadastrar Disciplina");
+            System.out.println("8. Cadastrar Faculdade");
+            System.out.println("9. Cadastrar Gerente");
+            System.out.println("10. Cadastrar Presidente");
+            System.out.print ("Opcao: " );
+
+            opcao = entrada.nextInt();
+
+            switch(opcao){
+                case 1:
+
+                    int sair1;
+                    int posicao = 0;
+                    Scanner lerDados = new Scanner(System.in);
+
+                    do {
+
+                        System.out.print ("Nome do Aluno: ");
+                        String nome = lerDados.nextLine();
+
+                        System.out.print ("CPF: ");
+                        String cpf = lerDados.nextLine();
+
+                        System.out.print ("Matricula: ");
+                        Integer matricula = lerDados.nextInt();
+
+                        System.out.print ("Conta: ");
+                        Integer conta = lerDados.nextInt();
+                        alunos.add(posicao, new Aluno(cpf, matricula, nome, conta));
+
+                        filaDeAlunos.enfileirar(alunos.get(posicao));
+                        posicao++;
+
+                        System.out.print ("\nDigite 0 finalizar cadastro de alunos: " );
+                        sair1 = entrada.nextInt();
+                    }while (sair1 != 0);
+//                    lerDados.close();
+
+                    break;
+
+                case 2:
+                    int sair2;
+                    Scanner lerDados2 = new Scanner(System.in);
+
+                    do {
+
+                        System.out.print ("Nome do Banco: ");
+                        String nomeBanco = lerDados2.nextLine();
+
+                        System.out.print ("Nome Fantasia: ");
+                        String nomeFantasia = lerDados2.nextLine();
+
+                        System.out.print ("CNPJ: ");
+                        String cnpj = lerDados2.nextLine();
+
+                        banco.add(new Banco(nomeBanco, nomeFantasia, cnpj));
+
+                        System.out.print ("\nDigite 0 finalizar cadastro do Banco: " );
+                        sair2 = entrada.nextInt();
+                    }while (sair2 != 0);
+//                    lerDados2.close();
+
+                    break;
+
+                case 3:
+                    int sair3;
+                    Scanner lerDados3 = new Scanner(System.in);
+
+                    do {
+                        System.out.print ("Nome do Titular da Conta: ");
+                        String titularContaCorrente = lerDados3.nextLine();
+
+                        contaCorrentes.add(new ContaCorrente(titularContaCorrente));
+
+                        System.out.print ("\nDigite 0 finalizar cadastro do Titular da Conta Corrente: " );
+                        sair3 = entrada.nextInt();
+                    }while (sair3 != 0);
+//                    lerDados3.close();
+
+                    break;
+
+                case 4:
+                    int sair4;
+                    Scanner lerDados4 = new Scanner(System.in);
+
+                    do {
+                        System.out.print ("Nome do Titular da Conta Poupança: ");
+                        String titularContaPoupanca = lerDados4.nextLine();
+
+                        contaPoupancas.add(new ContaPoupanca(titularContaPoupanca));
+
+                        System.out.print ("\nDigite 0 finalizar cadastro do Titular da Conta Poupanca: " );
+                        sair4 = entrada.nextInt();
+                    }while (sair4 != 0);
+//                    lerDados4.close();
+
+                    break;
+
+                case 5:
+                    int sair5;
+                    int posicao5 = 0;
+                    Scanner lerDados5 = new Scanner(System.in);
+
+                    do {
+
+                        System.out.print ("Nome do Coordenador: ");
+                        String nomeCoordenador = lerDados5.nextLine();
+
+                        System.out.print ("CPF: ");
+                        String cpfCoordenador = lerDados5.nextLine();
+
+                        System.out.print ("Conta: ");
+                        Integer contaCoordenador = lerDados5.nextInt();
+
+                        coordenadores.add(posicao5, new Coordenador(nomeCoordenador, cpfCoordenador, contaCoordenador));
+
+                        filaDeCoordenadores.enfileirar(coordenadores.get(posicao5));
+                        posicao5++;
+
+                        System.out.print ("\nDigite 0 finalizar cadastro de coordenadores: " );
+                        sair5 = entrada.nextInt();
+                    }while (sair5 != 0);
+//                    lerDados5.close();
+                    break;
+
+                case 6:
+                        Scanner lerDados1 = new Scanner(System.in);
+                        System.out.print ("Nome do Diretor: ");
+                        String nomeDiretor = lerDados1.nextLine();
+
+                        System.out.print ("CPF: ");
+                        String cpfDiretor = lerDados1.nextLine();
+
+                        System.out.print ("Conta: ");
+                        Integer contaDiretor = lerDados1.nextInt();
+
+                        diretores.add(new Diretor(nomeDiretor, cpfDiretor, contaDiretor));
+//                        lerDados1.close();
+                    break;
+
+                case 7:
+                    int sair7;
+                    Scanner lerDados7 = new Scanner(System.in);
+
+                    do {
+
+                        System.out.print ("Nome da Disciplina: ");
+                        String nomeDisciplina = lerDados7.nextLine();
+
+                        System.out.print ("Nome Id da Disciplina: ");
+                        String idDisciplina = lerDados7.nextLine();
+
+                        System.out.print ("Sala: ");
+                        String salaDisciplina = lerDados7.nextLine();
+
+                        System.out.print ("Hora de inicio: ");
+                        Integer horaInicioDisciplina = lerDados7.nextInt();
+
+                        System.out.print ("Hora de fim: ");
+                        Integer horaFimDisciplina = lerDados7.nextInt();
+
+                        disciplinas.add(new Disciplina(nomeDisciplina, idDisciplina, salaDisciplina, horaInicioDisciplina, horaFimDisciplina));
+
+                        System.out.print ("\nDigite 0 finalizar cadastro das disciplinas: " );
+                        sair7 = entrada.nextInt();
+                    }while (sair7 != 0);
+//                    lerDados7.close();
+                    break;
+
+                case 8:
+                    int sair8;
+                    Scanner lerDados8 = new Scanner(System.in);
+
+                    do {
+
+                        System.out.print ("Nome da Faculdade: ");
+                        String nomeFaculdade = lerDados8.nextLine();
+
+                        System.out.print ("CNPJ: ");
+                        String cnpjFaculdade = lerDados8.nextLine();
+
+                        faculdades.add(new Faculdade(nomeFaculdade, cnpjFaculdade));
+
+                        System.out.print ("\nDigite 0 finalizar cadastro da Faculdade: " );
+                        sair8 = entrada.nextInt();
+                    }while (sair8 != 0);
+//                    lerDados8.close();
+
+                    break;
+
+                case 9:
+                    int sair9;
+                    Scanner lerDados9 = new Scanner(System.in);
+
+                    do {
+
+                        System.out.print ("Nome do Diretor: ");
+                        String nomeGerente = lerDados9.nextLine();
+
+                        System.out.print ("CPF: ");
+                        String cpfGerente = lerDados9.nextLine();
+
+                        System.out.print ("Conta: ");
+                        Integer contaGerente = lerDados9.nextInt();
+
+                        gerentes.add(new Gerente(nomeGerente, cpfGerente, contaGerente));
+
+                        System.out.print ("\nDigite 0 finalizar cadastro de Gerente: " );
+                        sair9 = entrada.nextInt();
+
+                    }while (sair9 != 0);
+//                    lerDados9.close();
+
+                    break;
+
+                case 10:
+
+                        Scanner lerDados10 = new Scanner(System.in);
+                        System.out.print ("Nome do Presidente: ");
+                        String nomePresidente = lerDados10.nextLine();
+
+                        System.out.print ("CPF: ");
+                        String cpfPresidente = lerDados10.nextLine();
+
+                        System.out.print ("Conta: ");
+                        Integer contaGerente = lerDados10.nextInt();
+
+                        presidente.add(new Presidente(nomePresidente, cpfPresidente, contaGerente));
+//                        lerDados10.close();
+                    break;
+
+                default:
+                    System.out.println("Opcao invalida.");
+            }
+        } while(opcao != 0);
+
+    }
+
+
+    public static void listarFilaDeAtendimento (){
+        int i = 0;
+        System.out.println("------ Fila de Atendimento de Alunos ------\n" + " - " + filaDeAlunos + "\n");
+    }
+
+}
 public class Principal {
 
     public static void main(String[] args) {
 
+        int opcao;
+        Scanner entrada = new Scanner(System.in);
 
-        Aluno aluno1 = new Aluno ("111.222.333-44", 20221011, "Joao", 11111-1);
-        Aluno aluno2 = new Aluno ("111.222.333-55", 20221012, "Marcos", 22222-1);
-        Aluno aluno3 = new Aluno ("111.222.333-66", 20221013, "Paulo", 33333-1);
+        do{
+            Menu.menu();
+            opcao = entrada.nextInt();
 
-        Gerente gerente1 = new Gerente("111.111.111-11", "Francisco", 44444-1);
-        Diretor diretor1 = new Diretor("111.111.111-11", "Francisco", 44444-1);
-        Coordenador coordenador1 = new Coordenador("111.111.111-11", "Francisco", 44444-1);
+            switch(opcao){
+                case 1:
+                    Menu.cadastrarContas();
+                    break;
 
-        Curso curso1 = new Curso("Computacao", "1234", 6);
+                case 2:
+                    Menu.listarFilaDeAtendimento();
+                    break;
 
-        Faculdade faculdade1 = new Faculdade("Estacio", "111.111.1111-11");
+                default:
+                    System.out.println("Opcao invalida.");
+            }
+        } while(opcao != 0);
 
-        Banco banco1 = new Banco();
-        banco1.setNome("Banco do Brasil S/A");
-        banco1.setCnpj("111.111.1111-11");
-        banco1.setNomefantasia("Banco do Brasil");
+//        Aluno aluno1 = new Aluno ("111.222.333-44", 20221011, "Joao", 11111-1);
+//
+//        Aluno aluno2 = new Aluno ("111.222.333-55", 20221012, "Marcos", 22222-1);
+//        Aluno aluno3 = new Aluno ("111.222.333-66", 20221013, "Paulo", 33333-1);
+//
+//        Gerente gerente1 = new Gerente("111.111.111-11", "Francisco", 44444-1);
+//        Diretor diretor1 = new Diretor("111.111.111-11", "Francisco", 44444-1);
+//        Coordenador coordenador1 = new Coordenador("111.111.111-11", "Francisco", 44444-1);
+//
+//        Curso curso1 = new Curso("Computacao", "1234", 6);
+//
+//        Faculdade faculdade1 = new Faculdade("Estacio", "111.111.1111-11");
+//
+//        Disciplina disciplina1 = new Disciplina(aluno1,"programacao", "123","Sala E302", 8.0, 10.0);
 
-        FilaDeAtendimento <String> filaDeAlunos = new FilaDeAtendimento<>();
-        filaDeAlunos.enfileirar(aluno1.getNome());
-        filaDeAlunos.enfileirar(aluno2.getNome());
-        filaDeAlunos.enfileirar(aluno3.getNome());
 
-        System.out.println("Fila de alunos: " + filaDeAlunos);
 
-        System.out.println("");
+//        Banco banco1 = new Banco();
+//        banco1.setNome("Banco do Brasil S/A");
+//        banco1.setCnpj("111.111.1111-11");
+//        banco1.setNomefantasia("Banco do Brasil");
+
+//        FilaDeAtendimento <Aluno> filaDeAlunos = new FilaDeAtendimento<>();
+//        filaDeAlunos.enfileirar(aluno1);
+//        filaDeAlunos.enfileirar(aluno2);
+//        filaDeAlunos.enfileirar(aluno3);
+//
+//        System.out.println("Fila de alunos: " + filaDeAlunos);
+//
+//        System.out.println("");
         }
 
 

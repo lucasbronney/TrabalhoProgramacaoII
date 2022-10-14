@@ -4,21 +4,24 @@ public class ContaCorrente implements Conta {
 
     // Atributos //
     private String titular;
-    private float saldo;
+    private double saldo = 0;
     private boolean status;
 
     // Construtor //
+    public ContaCorrente(){
+
+    }
     public ContaCorrente(String titular) {
         this.titular = titular;
 
     }
 
     // Getters and Setters //
-    public float getSaldo() {
+    public double getSaldo() {
         return saldo;
     }
 
-    public void setSaldo(float saldo) {
+    public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
 
@@ -31,7 +34,7 @@ public class ContaCorrente implements Conta {
     }
 
     // Métodos //
-    public void depositar(float v) {
+    public void depositar(double v) {
         if (this.getStatus()) {
             this.setSaldo(this.getSaldo() + v);
             System.out.println("Depósito realizado");
@@ -41,7 +44,7 @@ public class ContaCorrente implements Conta {
 
     }
 
-    public void sacar(float v) {
+    public void sacar(double v) {
         if (this.getStatus()) {
             if (this.getSaldo() >= v) {
                 this.setSaldo(this.getSaldo() - v);

@@ -49,5 +49,5 @@ public class Curso {
     public String toString() {
         return "Curso{" + "nome=" + nome + ", id=" + id + ", qtdPeriodo=" + qtdPeriodo + '}';
     }
-    
-}
+
+   }

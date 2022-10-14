@@ -3,33 +3,34 @@ package trabalho01;
 public class Disciplina {
 
     // Atributos // 
-    private String nome,id,sala;
+    private String nomeDisciplina, idDisciplina,sala;
     private double horaInicio, horaFim;
+
     // Construtor //
 
-    public Disciplina(String nome, String id, String sala, double horaInicio, double horaFim) {
-        this.nome = nome;
-        this.id = id;
+    public Disciplina( String nomeDisciplina, String idDisciplina, String sala, double horaInicio, double horaFim) {
+        this.nomeDisciplina = nomeDisciplina;
+        this.idDisciplina = idDisciplina;
         this.sala = sala;
         this.horaInicio = horaInicio;
         this.horaFim = horaFim;
     }
     
     // Getters and Setters //
-    private String getNome() {
-        return nome;
+    private String getNomeDisciplina() {
+        return nomeDisciplina;
     }
 
-    private void setNome(String nome) {
-        this.nome = nome;
+    private void setNomeDisciplina(String nomeDisciplina) {
+        this.nomeDisciplina = nomeDisciplina;
     }
 
-    private String getId() {
-        return id;
+    private String getIdDisciplina() {
+        return idDisciplina;
     }
 
-    private void setId(String id) {
-        this.id = id;
+    private void setIdDisciplina(String idDisciplina) {
+        this.idDisciplina = idDisciplina;
     }
 
     private String getSala() {
@@ -58,9 +59,9 @@ public class Disciplina {
 
     // toString //
 
-    @Override
+   @Override
     public String toString() {
-        return "Disciplina{" + "nome=" + nome + ", id=" + id + ", sala=" + sala + ", horaInicio=" + horaInicio + ", horaFim=" + horaFim + '}';
+        return "Disciplina{" + "nome=" + nomeDisciplina + ", id=" + idDisciplina + ", sala=" + sala + ", horaInicio=" + horaInicio + ", horaFim=" + horaFim + '}';
     }
     
 }
