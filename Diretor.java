@@ -42,4 +42,13 @@ public class Diretor extends Funcionario implements PessoaFisica, Diretoria {
         this.cpf = cpf;
     }
 
+    @Override
+    public void infoDiretoria() {
+        System.out.println("Nome: " + this.getNome());
+        System.out.println("CPF: " + this.getCpf());
+        System.out.println("Funcao: " + this.getFuncao());
+        System.out.println("Contas: " + this.getConta());
+        System.out.println("Tipo: Pessoa Fisica");
+    }
+
 }
