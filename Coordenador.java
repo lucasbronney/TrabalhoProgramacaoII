@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Coordenador extends Funcionario implements PessoaFisica, Diretoria {
 // Atributos //
+
     public static ArrayList<Aluno> alunos = new ArrayList<>();
 
 // Construtor //
@@ -40,5 +41,14 @@ public class Coordenador extends Funcionario implements PessoaFisica, Diretoria 
     @Override
     public void setCPF(String cpf) {
         this.cpf = cpf;
+    }
+
+    @Override
+    public void infoDiretoria() {
+        System.out.println("Nome: " + this.getNome());
+        System.out.println("CPF: " + this.getCpf());
+        System.out.println("Funcao: " + this.getFuncao());
+        System.out.println("Contas: " + this.getConta());
+        System.out.println("Tipo: Pessoa Fisica");
     }
 }
