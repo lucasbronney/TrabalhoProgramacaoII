@@ -418,36 +418,7 @@ public class Principal {
             }
         } while(opcao != 0);
 
-//        Aluno aluno1 = new Aluno ("111.222.333-44", 20221011, "Joao", 11111-1);
-//
-//        Aluno aluno2 = new Aluno ("111.222.333-55", 20221012, "Marcos", 22222-1);
-//        Aluno aluno3 = new Aluno ("111.222.333-66", 20221013, "Paulo", 33333-1);
-//
-//        Gerente gerente1 = new Gerente("111.111.111-11", "Francisco", 44444-1);
-//        Diretor diretor1 = new Diretor("111.111.111-11", "Francisco", 44444-1);
-//        Coordenador coordenador1 = new Coordenador("111.111.111-11", "Francisco", 44444-1);
-//
-//        Curso curso1 = new Curso("Computacao", "1234", 6);
-//
-//        Faculdade faculdade1 = new Faculdade("Estacio", "111.111.1111-11");
-//
-//        Disciplina disciplina1 = new Disciplina(aluno1,"programacao", "123","Sala E302", 8.0, 10.0);
 
-
-
-//        Banco banco1 = new Banco();
-//        banco1.setNome("Banco do Brasil S/A");
-//        banco1.setCnpj("111.111.1111-11");
-//        banco1.setNomefantasia("Banco do Brasil");
-
-//        FilaDeAtendimento <Aluno> filaDeAlunos = new FilaDeAtendimento<>();
-//        filaDeAlunos.enfileirar(aluno1);
-//        filaDeAlunos.enfileirar(aluno2);
-//        filaDeAlunos.enfileirar(aluno3);
-//
-//        System.out.println("Fila de alunos: " + filaDeAlunos);
-//
-//        System.out.println("");
         }
 
 
