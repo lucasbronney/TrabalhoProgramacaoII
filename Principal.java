@@ -172,7 +172,7 @@ class Menu{
                         String cpf = lerDados.nextLine();
 
                         System.out.print ("Matricula: ");
-                        Integer matricula = lerDados.nextInt();
+                        String matricula = lerDados.nextLine();
 
                         System.out.print ("Conta: ");
                         Integer conta = lerDados.nextInt();
@@ -182,7 +182,8 @@ class Menu{
                         posicao++;
 
                         System.out.print ("\nDigite 0 finalizar cadastro de alunos: " );
-                        sair1 = entrada.nextInt();
+                        sair1 = lerDados.nextInt();
+//                        lerDados.nextLine();
                     }while (sair1 != 0);
 //                    lerDados.close();
 
@@ -206,7 +207,8 @@ class Menu{
                         banco.add(new Banco(nomeBanco, nomeFantasia, cnpj));
 
                         System.out.print ("\nDigite 0 finalizar cadastro do Banco: " );
-                        sair2 = entrada.nextInt();
+                        sair2 = lerDados2.nextInt();
+                        lerDados2.nextLine();
                     }while (sair2 != 0);
 //                    lerDados2.close();
 
@@ -223,7 +225,8 @@ class Menu{
                         contaCorrentes.add(new ContaCorrente(titularContaCorrente));
 
                         System.out.print ("\nDigite 0 finalizar cadastro do Titular da Conta Corrente: " );
-                        sair3 = entrada.nextInt();
+                        sair3 = lerDados3.nextInt();
+                        lerDados3.nextLine();
                     }while (sair3 != 0);
 //                    lerDados3.close();
 
@@ -241,6 +244,7 @@ class Menu{
 
                         System.out.print ("\nDigite 0 finalizar cadastro do Titular da Conta Poupanca: " );
                         sair4 = entrada.nextInt();
+                        entrada.nextLine();
                     }while (sair4 != 0);
 //                    lerDados4.close();
 
@@ -269,6 +273,7 @@ class Menu{
 
                         System.out.print ("\nDigite 0 finalizar cadastro de coordenadores: " );
                         sair5 = entrada.nextInt();
+                        entrada.nextLine();
                     }while (sair5 != 0);
 //                    lerDados5.close();
                     break;
@@ -313,6 +318,7 @@ class Menu{
 
                         System.out.print ("\nDigite 0 finalizar cadastro das disciplinas: " );
                         sair7 = entrada.nextInt();
+                        entrada.nextLine();
                     }while (sair7 != 0);
 //                    lerDados7.close();
                     break;
@@ -333,6 +339,7 @@ class Menu{
 
                         System.out.print ("\nDigite 0 finalizar cadastro da Faculdade: " );
                         sair8 = entrada.nextInt();
+                        entrada.nextLine();
                     }while (sair8 != 0);
 //                    lerDados8.close();
 
@@ -357,6 +364,7 @@ class Menu{
 
                         System.out.print ("\nDigite 0 finalizar cadastro de Gerente: " );
                         sair9 = entrada.nextInt();
+                        entrada.nextLine();
 
                     }while (sair9 != 0);
 //                    lerDados9.close();

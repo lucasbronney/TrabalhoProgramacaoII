@@ -3,22 +3,22 @@ package trabalho01;
 public class Aluno extends Pessoa implements PessoaFisica {
     // Atributos //
     String cpf;
-    int matricula;
+    String matricula;
 
     // Construtor //
 
-    public Aluno(String cpf, int matricula, String nome, int conta) {
+    public Aluno(String cpf, String matricula, String nome, int conta) {
         super(nome, conta);
         this.cpf = cpf;
         this.matricula = matricula;
     }
 
     // Getters and Setters //
-    public int getMatricula() {
+    public String getMatricula() {
         return matricula;
     }
 
-    public void setMatricula(int matricula) {
+    public void setMatricula(String matricula) {
         this.matricula = matricula;
     }
 
